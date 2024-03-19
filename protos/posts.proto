@@ -1,0 +1,25 @@
+syntax = "proto3";
+package posts;
+
+service Posts {
+  rpc GetPosts(GetPostsRequest) returns (GetPostsResponse){}
+  rpc SendCustomMessage(CustomMessageRequest) returns (CustomMessageResponse){}
+}
+
+message GetPostsRequest {
+  string name = 1;
+}
+
+message GetPostsResponse {
+  string content = 1;
+  string created_at = 2;
+  int32 total_likes = 3;
+}
+
+message CustomMessageRequest {
+  // Define fields for your custom message request
+}
+
+message CustomMessageResponse {
+  string message = 1;
+}
